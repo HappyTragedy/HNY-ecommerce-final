@@ -1,24 +1,19 @@
 import React from "react";
+import { Container } from './Styled'
 
-const CartDetail = ({ cart, getCartTotal, addToCart }) => {
+const CartDetail = ({ cart, getCartTotal }) => {
 
-    if (cart.quantity > 0) {
-        return cart.map(({ name, price, quantity }) => (
-            <ul>
-                <li><p>Producto: {name}</p><p> Cantidad: {quantity} x ${price}</p></li>
-                <li><p>Total: ${getCartTotal()}</p></li>
-            </ul>
-        ))
-    } else {
-        return (
-            <>
+    return (
+        <Container>
+            {cart.map(({ name, price, quantity }) => (
                 <ul>
-                    <li><p>Producto: </p><p> Cantidad: </p></li>
-                    <li><p>Total: </p></li>
+                    <li><p>{name}</p><p>{quantity} x {price}</p></li>
                 </ul>
-            </>
-        );
-    };
+            ))}
+            <hr />
+            <p className="preciototal">{getCartTotal()}</p>
+        </Container>
+    )
 }
 
 export default CartDetail;
