@@ -1,68 +1,24 @@
-import React, { useState, useEffect } from 'react'
-import { Container } from './Styled'
-import Logo from '../../assets/images/hny.png'
-import { Link } from 'react-router-dom'
-import { getFirestore } from '../../Services/firebase'
+import React from "react";
+import { Hero2 } from "./Styled";
 
 const Hero = () => {
+  return (
+    <Hero2>
+      <iframe
+        width="1481"
+        height="593"
+        src="https://www.youtube.com/embed/yc3356aM6gI?mute=1&loop=1&autoplay=1&controls=0&playlist=yc3356aM6gI"
+        title="Yashahime: Princess Half-Demon Opening 1"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <div className="hero">
+        <h1>How much do you like the InuYasha anime?</h1>
+        <p>Merchandise a "click" away</p>
+      </div>
+    </Hero2>
+  );
+};
 
-    const [categories, setCategories] = useState({})
-    const [loading, setLoading] = useState(true)
-
-    useEffect(() => {
-        const fetchData = async () => {
-            setLoading(true)
-            const db = getFirestore()
-            try {
-                const itemsCollection = db.collection(`categories`)
-                const itemSnapshot = await itemsCollection.get();
-                const cats = itemSnapshot.docs.map(doc => {
-                    return { catId: doc.id, ...doc.data() }
-                })
-
-                setCategories(cats)
-                setLoading(false)
-
-            } catch (error) {
-                console.log('Error:', error)
-            } finally {
-                setLoading(false)
-            }
-        }
-
-
-        fetchData()
-    }, [])
-
-
-    return (
-        <div className="patron" style={{ boxShadow: "0px 0px 15px 0px #000000b8" }}>
-            <Container>
-                <div className="logo">
-                    <Link to='/'><img src={Logo} alt="Logo"></img></Link>
-                </div>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to={`/`}>Home</Link>
-                        </li>
-                        <li>
-                            <Link to={`/shop`}>Shop</Link>
-                        </li>
-                        {!loading &&
-                            categories.map(({ catId, name }) => (
-                                <li>
-                                    <Link to={`/category/${catId}`}>{name}</Link>
-                                </li>
-                            ))}
-                        <li>
-                            <Link to={`/checkout`}>Checkout</Link>
-                        </li>
-                    </ul>
-                </nav>
-            </Container>
-        </div>
-    )
-}
-
-export default Hero
+export default Hero;

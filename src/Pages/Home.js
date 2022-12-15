@@ -1,18 +1,18 @@
-import React, { useContext } from 'react'
-import { CartContext } from '../Contexts/CartContext'
+import React from "react";
+import Hero from "../components/Hero/Hero";
+import Recientes from "../components/Recientes/Recientes";
+import Data from "../components/Data/Data";
+import PaymentMethods from "../components/PaymentMethods/PaymentMethods";
 
 const Home = () => {
+  return (
+    <>
+      <Hero />
+      <Recientes />
+      <Data />
+      <PaymentMethods />
+    </>
+  );
+};
 
-    const { cart, resetCart, cartTotalItems } = useContext(CartContext)
-    console.log("from home", cart);
-
-    return (
-        <div>
-            Home {cartTotalItems()}
-
-            <button onClick={resetCart}>Reset Cart</button>
-        </div>
-    )
-}
-
-export default Home
+export default Home;

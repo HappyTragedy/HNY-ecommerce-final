@@ -1,70 +1,72 @@
-import styled from 'styled-components'
-import Pattern from '../../assets/images/pattern.png'
-import Font from '../../assets/fonts/CatCafe.ttf'
+import styled from "styled-components";
+import Hero from "../../assets/images/hynbanner.jpg";
 
-const Container = styled.div`
-height: 15vh;
-padding: 20px;
-background-image: url('${Pattern}');
-background-repeat: no-repeat;
-background-size: cover;
-display: grid;
-grid-template-columns: 1fr 1fr;
-align-items: center;
-margin-bottom: 10%;
+const Hero2 = styled.div`
+  background-position: center;
 
+  iframe {
+    position: relative;
+    z-index: -1;
+  }
 
-@font-face {
-  font-family: 'CatCafe';
-  src: url('${Font}');
-}
-
-.patron{
-    box-shadow: 0px 0px 20px 2px #000000;
-}
-
-img{
-    width: 65%;
-}
-
-nav{
-
+  .hero {
+    width: 100%;
+    height: 69vh;
+    background: #00000052;
+    left: 0;
     position: absolute;
-    bottom: 85%;
-    left: 60%;
+    top: 23%;
+    z-index: -1;
+    color: white;
+  }
 
-    ul{ 
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        align-items: center;
-        row-gap: 33%;
+  .hero h1,
+  .hero p {
+    position: absolute;
+    top: 40%;
+    left: 17%;
+    transform: translate(-50%, -50%);
+    font-family: "CatCafe";
+    font-size: 2.2em;
+    width: 26%;
+  }
+
+  .hero p {
+    top: 53%;
+    font-family: "Calibri";
+    left: 17%;
+    font-size: 1.5em;
+  }
+
+  @media (max-width: 480px) {
+    background-image: url("${Hero}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 75vh;
+    position: relative;
+    background-position: center;
+    z-index: -1;
+
+    iframe {
+      display: none;
     }
 
-    li{
-        padding: 0 20px;
-        list-style: none;
-        color: white;
-        text-decoration: none;
+    .hero{
+      height: 61vh;
+      top: 9%
     }
 
-    .four{
-        grid-column: 1 / 3;
-        grid-row: 2;
+    .hero h1{
+      left: 45%;
+      width: 80%;
     }
 
-    .five{
-        grid-column: 2 / 4;
-        grid-row: 2;
+    .hero p{
+      top: 64%;
+      left: 37%;
+      width: 65%;
     }
+  }
+`;
 
-    a{
-        color: black;
-        text-decoration: none;
-        font-family: "CatCafe";
-        font-size: 18px;
-    }
-}
-`
-
-
-export { Container }
+export { Hero2 };

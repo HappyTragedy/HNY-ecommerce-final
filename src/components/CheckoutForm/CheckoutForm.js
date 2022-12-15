@@ -1,7 +1,6 @@
 import React from "react";
 import { Formik, ErrorMessage } from "formik";
-import { Container, Button, Formulario, Field } from "./Styled";
-
+import { Container, Formulario, Field } from "./Styled";
 
 const CheckoutForm = ({ handleSubmit }) => (
   <Formik
@@ -33,20 +32,43 @@ const CheckoutForm = ({ handleSubmit }) => (
     {({ isSubmitting }) => (
       <Container>
         <Formulario id="my-form">
-          <Field placeholder="Name" type="text" name="name" autoComplete= "off"/>
+          <div className="titulo">
+            <h1>Just one more step!</h1>
+            <h3>Complete the fields to finalize your purchase</h3>
+          </div>
+          <Field
+            placeholder="Name"
+            type="text"
+            name="name"
+            autoComplete="off"
+          />
           <ErrorMessage name="name" component="span" />
-          <Field placeholder="Email" type="email" name="email" autoComplete= "off"/>
+          <Field
+            placeholder="Email"
+            type="email"
+            name="email"
+            autoComplete="off"
+          />
           <ErrorMessage name="email" component="span" />
-          <Field placeholder="Phone" type="text" name="phone" autoComplete= "off"/>
+          <Field
+            placeholder="Phone"
+            type="text"
+            name="phone"
+            autoComplete="off"
+          />
           <ErrorMessage name="phone" component="span" />
-          <Button type="submit" disabled={isSubmitting}>
-            Submit
-          </Button>
+          <button
+            className="btn effect"
+            data-sm-link-text="Submit"
+            type="submit"
+            disabled={isSubmitting}
+          >
+            <span>Ready?</span>
+          </button>
         </Formulario>
       </Container>
     )}
   </Formik>
 );
-
 
 export default CheckoutForm;

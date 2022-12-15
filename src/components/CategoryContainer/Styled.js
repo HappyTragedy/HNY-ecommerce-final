@@ -1,12 +1,25 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Container = styled.div`
-margin: 50px auto;
-max-width: 1200px;
-height: 50vh;
+  display: grid;
+  grid-template-columns: 26.73% auto;
+  grid-template-areas: "left right";
+  height: auto;
 
-background-color: rgb(255,255,255, 0.9);
-padding: 5%;
-`
+  .grilla {
+    padding-top: 7%;
+    width: 85%;
+    margin: 0 auto;
+    margin-bottom: 7%;
+  }
 
-export {Container}
+  .grilla h1{
+    font-family: 'CatCafe';
+  }
+
+  @media (max-width: 480px) {
+    display: block;
+  }
+`;
+
+export { Container };
