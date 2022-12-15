@@ -78,12 +78,16 @@ const Checkout = () => {
             </ColCart>
           </GridCart>
         </Container>
-        <ColCart desktop={6} tablet={6} mobile={12}>
-          <CheckoutForm
-            handleSubmit={placeOrder}
-            cartTotalItems={cartTotalItems}
-          />
-        </ColCart>
+        {cartTotalItems() > 0 ? (
+          <ColCart desktop={6} tablet={6} mobile={12}>
+            <CheckoutForm
+              handleSubmit={placeOrder}
+              cartTotalItems={cartTotalItems}
+            />
+          </ColCart>
+        ) : (
+          <></>
+        )}
       </div>
     </>
   );

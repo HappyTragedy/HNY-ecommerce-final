@@ -24,7 +24,7 @@ const Hero4 = styled.div`
   .hero p {
     position: absolute;
     top: 40%;
-    left: 19%;
+    left: 28%;
     transform: translate(-50%, -50%);
     font-family: "CatCafe";
     font-size: 2.2em;
@@ -39,8 +39,9 @@ const Hero4 = styled.div`
 
   @media (max-width: 480px) {
     .hero h1 {
+      width: 85%;
       text-align: left;
-      left: 37%;
+      left: 48%;
     }
 
     .hero p {
