@@ -1,9 +1,9 @@
 import React from "react";
-import { GridContainer, ColContainer } from "./styled";
+import { GridContainer, ColContainer, ColContainerForm } from "./styled";
 
 const GridCart = ({ children, ...props }) => {
   return (
-    <GridContainer colGap={props.colGap} rowGap={props.rowGap}>
+    <GridContainer key={props} colGap={props.colGap} rowGap={props.rowGap}>
       {children}
     </GridContainer>
   );
@@ -12,6 +12,7 @@ const GridCart = ({ children, ...props }) => {
 const ColCart = ({ children, ...props }) => {
   return (
     <ColContainer
+      key={props}
       desktop={props.desktop}
       tablet={props.tablet}
       mobile={props.mobile}
@@ -21,4 +22,17 @@ const ColCart = ({ children, ...props }) => {
   );
 };
 
-export { GridCart, ColCart };
+const ColCartForm = ({ children, ...props }) => {
+  return (
+    <ColContainerForm
+      key={props}
+      desktop={props.desktop}
+      tablet={props.tablet}
+      mobile={props.mobile}
+    >
+      {children}
+    </ColContainerForm>
+  );
+};
+
+export { GridCart, ColCart, ColCartForm };

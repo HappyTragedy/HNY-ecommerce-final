@@ -18,6 +18,7 @@ code {
 .todoJunto {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 @media (max-width: 480px) {

@@ -5,6 +5,9 @@ const Hero2 = styled.div`
   background-position: center;
 
   iframe {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 15 / 6;
     position: relative;
     z-index: -1;
   }

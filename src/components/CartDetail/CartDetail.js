@@ -15,7 +15,7 @@ const CartDetail = ({
       <div className="datos">
         <div className="contenedor">
           {cart.map(({ id, name, price, image, quantity }) => (
-            <>
+            <div key={id}>
               <div className="imagen">
                 <img src={image} alt="producto añadido"></img>
                 <div className="info">
@@ -49,7 +49,7 @@ const CartDetail = ({
                   <p>${price}</p>
                 </div>
               </div>
-            </>
+            </div>
           ))}
         </div>
       </div>

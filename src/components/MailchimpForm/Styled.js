@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  display: flex;
-  height: 100vh;
-  background-color: #f2f2f2;
-  padding-bottom: 23.2%;
-  width: 35vw;
-  align-items: baseline;
+  display: grid;
+    height: 100vh;
+    background-color: #f2f2f2;
+    padding: 0% 0% 23.2% 0%;
+    width: 35vw;
+    flex-direction: column;
+    justify-items: center;
+    align-content: space-evenly;
 
   .btn {
     font-family: "CatCafe";
@@ -14,13 +16,10 @@ const Container = styled.div`
     cursor: pointer;
     font-size: 14px;
     line-height: 40px;
-    max-width: 55%;
     position: relative;
-    -webkit-text-decoration: none;
-    -webkit-text-decoration: none;
     text-decoration: none;
     text-transform: uppercase;
-    width: 100%;
+    width: 40%;
     background-color: #e2e2e2;
     border-radius: 8px;
     margin: 0 auto;
@@ -81,12 +80,11 @@ const Container = styled.div`
 
 const Formulario = styled.form`
   display: grid;
-  row-gap: 23%;
-  padding: 31% 0% 0% 0%;
   margin: 0 auto;
 
   .titulo {
     text-align: center;
+    padding-top: 30%;
   }
 
   .titulo h1 {
@@ -100,7 +98,7 @@ const Formulario = styled.form`
 `;
 
 const Field = styled.input`
-  width: 100%;
+  width: 56%;
   border: 0;
   border-bottom: 2px solid lightgrey;
   outline: 0;

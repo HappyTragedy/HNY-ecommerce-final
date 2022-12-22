@@ -17,4 +17,15 @@ const ColContainer = styled.div`
   }
 `;
 
-export { GridContainer, ColContainer };
+const ColContainerForm = styled.div`
+  background-color: #f2f2f2;
+  grid-column: span ${(props) => props.desktop || 12};
+  @media (max-width: 768px) {
+    grid-column: span ${(props) => props.tablet || "12"};
+  }
+  @media (max-width: 480px) {
+    grid-column: span ${(props) => props.mobile || "12"};
+  }
+`;
+
+export { GridContainer, ColContainer, ColContainerForm };

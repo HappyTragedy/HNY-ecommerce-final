@@ -4,7 +4,7 @@ const MenuShop = styled.div`
   width: 30%;
 
   .grid {
-    width: 80%;
+    width: 85%;
   }
 
   .contenedor {

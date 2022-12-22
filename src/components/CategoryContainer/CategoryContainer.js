@@ -19,9 +19,9 @@ const CategoryContainer = ({ catId }) => {
         const productsSnapshot = catId
           ? await productsCollection
               .where("category", "==", catId)
-              .limit(25)
+              .limit(20)
               .get()
-          : await productsCollection.orderBy("price", "desc").limit(25).get();
+          : await productsCollection.orderBy("price", "desc").limit(20).get();
 
         const products = productsSnapshot.docs.map((doc) => {
           return { id: doc.id, ...doc.data() };

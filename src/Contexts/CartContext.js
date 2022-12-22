@@ -21,7 +21,13 @@ const CartProvider = ({ defaultValue = [], children }) => {
       const cartWidhoutProduct = cart.filter((product) => product.id !== id);
       const finalCart = [
         ...cartWidhoutProduct,
-        { id: id, name: name, price: price, image: image, quantity: quantity + oldQuantity },
+        {
+          id: id,
+          name: name,
+          price: price,
+          image: image,
+          quantity: quantity + oldQuantity,
+        },
       ];
       setCart(finalCart);
     }
@@ -38,9 +44,7 @@ const CartProvider = ({ defaultValue = [], children }) => {
     setCart(cart.filter((productToRemove) => productToRemove.id !== id));
 
   const getCartTotal = () =>
-    cart
-      .reduce((total, current) => total + current.price * current.quantity, 0)
-      .toFixed(2);
+    cart.reduce((total, current) => total + current.price * current.quantity, 0).toFixed(2);
 
   //Aca ponemos las funciones que sean referentes al carrito
 

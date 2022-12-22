@@ -30,7 +30,7 @@ const Products = () => {
         const itemsCollection = db.collection(`products`);
         const itemSnapshot = await itemsCollection.doc(prodId).get();
         if (!itemSnapshot.exists) {
-          console.log("No matching products..");
+          console.log("No matching documents.");
           return;
         }
 

@@ -1,12 +1,13 @@
 import React, { useState, useContext } from "react";
-import { GridCart, ColCart } from "../components/GridCart/index";
-import CheckoutForm from "../components/CheckoutForm/CheckoutForm";
+import { GridCart, ColCart, ColCartForm } from "../components/GridCart/index";
 import { CartContext } from "../Contexts/CartContext";
 import CartDetail from "../components/CartDetail/CartDetail";
 import { getFirestore, getDate } from "../Services/firebase";
 import { Container } from "../components/CartDetail/Styled";
 import HeroCart from "../components/HeroCart/HeroCart";
 import "../index.css";
+import MailchimpForm from "../components/MailchimpForm/MailchimpForm";
+import { Aviso } from "../components/ProductCard/Styled";
 
 const Checkout = () => {
   const {
@@ -61,7 +62,7 @@ const Checkout = () => {
       <div className="todoJunto">
         <Container>
           {orderCreated ? (
-            <h2>Checkout {`Order N ${orderCreated}`}</h2>
+            <Aviso>{`Order N ${orderCreated}`}</Aviso>
           ) : (
             <h1>Cart</h1>
           )}
@@ -79,12 +80,12 @@ const Checkout = () => {
           </GridCart>
         </Container>
         {cartTotalItems() > 0 ? (
-          <ColCart desktop={6} tablet={6} mobile={12}>
-            <CheckoutForm
+          <ColCartForm desktop={6} tablet={6} mobile={12}>
+            <MailchimpForm
               handleSubmit={placeOrder}
               cartTotalItems={cartTotalItems}
             />
-          </ColCart>
+          </ColCartForm>
         ) : (
           <></>
         )}
