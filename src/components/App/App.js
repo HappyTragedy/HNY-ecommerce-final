@@ -8,6 +8,7 @@ import NavBar2 from "../NavBar2/NavBar2";
 import { CartProvider } from "../../Contexts/CartContext";
 import Checkout from "../../Pages/Checkout";
 import Footer from "../Footer/Footer";
+import Sale from "../../Pages/Sale";
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
             </Route>
             <Route exact path={`/checkout`}>
               <Checkout />
+            </Route>
+            <Route exact path={`/sale`}>
+              <Sale />
             </Route>
             <Route exact path={`/`}>
               <Home />

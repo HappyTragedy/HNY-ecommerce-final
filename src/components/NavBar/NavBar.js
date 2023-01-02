@@ -16,6 +16,9 @@ return (
           <li>
             <Link to={`/checkout`}>Cart</Link>
           </li>
+          <li>
+            <Link to={`/sale`}>Sale</Link>
+          </li>
         </ul>
       </nav>
     </Container>

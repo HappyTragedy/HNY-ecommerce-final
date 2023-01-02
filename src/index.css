@@ -21,6 +21,15 @@ code {
   align-items: flex-start;
 }
 
+.contenedor{
+  padding-bottom: 80px;
+}
+
+.contenedor h1{
+  text-align: center;
+  margin: 10% 0% 5% 0%;
+}
+
 @media (max-width: 480px) {
   .todoJunto{
     flex-direction: column;
